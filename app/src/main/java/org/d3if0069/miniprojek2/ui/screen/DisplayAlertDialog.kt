@@ -2,9 +2,11 @@ package org.d3if0069.miniprojek2.ui.screen
 
 import android.content.res.Configuration
 import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import org.d3if0069.miniprojek2.R
@@ -20,14 +22,23 @@ fun DisplayAlertDialog(
         AlertDialog(
             text = { Text(text = stringResource(R.string.pesan_hapus)) },
             confirmButton = {
-                TextButton(onClick = { onConfirmation() }) {
-                    Text(text = stringResource(R.string.tombol_hapus))
+                TextButton(
+                    onClick = { onConfirmation() },
+                    colors = ButtonDefaults.textButtonColors(
+                        containerColor = Color(0xFF800000) )){
+                            Text(
+                                text = stringResource(R.string.tombol_hapus),
+                                color = Color(0xFFFFFFFF)
+                            )
 
                 }
             },
             dismissButton = {
                 TextButton(onClick = { onDissmissRequest() }) {
-                    Text(text = stringResource(R.string.tombol_batal))
+                    Text(text = stringResource(R.string.tombol_batal),
+                        color = Color(0xFF000000)
+                    )
+
                 }
             },
             onDismissRequest = {onDissmissRequest()}

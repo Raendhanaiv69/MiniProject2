@@ -155,7 +155,7 @@ fun DeleteAction(delete: () -> Unit) {
         Icon(
             imageVector = Icons.Filled.MoreVert,
             contentDescription = stringResource(R.string.lainnya),
-            tint = MaterialTheme.colorScheme.primary
+            tint = Color(0xFFFFFFFF)
         )
         DropdownMenu(
             expanded = expanded,

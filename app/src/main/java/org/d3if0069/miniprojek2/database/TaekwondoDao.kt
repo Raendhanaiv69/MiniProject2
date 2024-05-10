@@ -15,7 +15,7 @@ interface TaekwondoDao {
     @Update
     suspend fun update(taekwondo: Taekwondo)
 
-    @Query("SELECT * FROM taekwondo ORDER BY sabuk DESC")
+    @Query("SELECT * FROM taekwondo ORDER BY nama DESC")
     fun getTaekwondo(): Flow<List<Taekwondo>>
     @Query("SELECT * FROM taekwondo WHERE id = :id")
     suspend fun getTaekwondoById(id: Long): Taekwondo?
