@@ -36,6 +36,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
@@ -84,7 +85,7 @@ fun DetailScreen(navController: NavHostController, id: Long? = null){
                         Icon(
                             imageVector = Icons.Filled.ArrowBack,
                             contentDescription = stringResource(R.string.kembali),
-                            tint = MaterialTheme.colorScheme.primary
+                            tint = Color(0xFFFFFFFF)
                         )
                     }
                 },
@@ -95,8 +96,8 @@ fun DetailScreen(navController: NavHostController, id: Long? = null){
                         Text(text = stringResource(id = R.string.edit_atlet))
                 },
                 colors = TopAppBarDefaults.mediumTopAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.primaryContainer,
-                    titleContentColor = MaterialTheme.colorScheme.primary,
+                    containerColor = Color(0xFF800000),
+                    titleContentColor = Color(0xFFFFFFFF),
                 ),
                 actions = {
                     IconButton(onClick = {
@@ -113,7 +114,7 @@ fun DetailScreen(navController: NavHostController, id: Long? = null){
                         Icon(
                             imageVector = Icons.Outlined.Check,
                             contentDescription = stringResource(R.string.simpan),
-                            tint = MaterialTheme.colorScheme.primary
+                            tint = Color(0xFFFFFFFF)
                         )
                     }
                     if ( id != null ) {
@@ -218,7 +219,7 @@ fun FormTaekwondo(
                     "FEB",
                     "FKB",
                     "FIK",
-                    "FTI",
+                    "FIF",
                     "FTE",
                     "FRI"
                 ).forEach { classOption ->

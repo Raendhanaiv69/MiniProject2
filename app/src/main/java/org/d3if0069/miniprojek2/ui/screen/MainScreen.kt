@@ -73,15 +73,16 @@ fun MainScreen(navController: NavHostController){
                         Icon(
                             painter = painterResource(id = R.drawable.logo_tkd),
                             contentDescription = "Logo",
-                            modifier = Modifier.size(24.dp)
+                            modifier = Modifier.size(24.dp),
+                            tint = Color.Unspecified
                         )
                         Spacer(modifier = Modifier.size(8.dp))
                         Text(text = stringResource(id = R.string.app_name))
                     }
                 },
                 colors = TopAppBarDefaults.mediumTopAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.primaryContainer,
-                    titleContentColor = MaterialTheme.colorScheme.primary,
+                    containerColor =  Color(0xFF800000),
+                    titleContentColor = Color(0xFFFFFFFF),
                 ),
                 actions = {
                     IconButton(onClick = {
@@ -97,7 +98,8 @@ fun MainScreen(navController: NavHostController){
                                 if (showList) R.string.grid
                                 else R.string.list
                             ),
-                            tint = MaterialTheme.colorScheme.primary
+
+                            tint = Color(0xFFFFFFFF)
                         )
                     }
                 }
@@ -107,12 +109,14 @@ fun MainScreen(navController: NavHostController){
             FloatingActionButton(
                 onClick = {
                     navController.navigate(Screen.FormBaru.route)
-                }
+                },
+                containerColor = Color(0xFF800000)
+
             ) {
                 Icon(
                     imageVector = Icons.Filled.Add,
                     contentDescription = stringResource(R.string.tambah_Atlet),
-                    tint = MaterialTheme.colorScheme.primary
+                    tint = Color(0xFFFFFFFF)
                 )
             }
         }
@@ -201,7 +205,7 @@ fun ListItem(taekwondo: Taekwondo, onClick: () -> Unit) {
         }
         Row {
             Text(
-                text = "Fakultas : ",
+                text = "Fakultas: ",
                 fontWeight = FontWeight.Bold
             )
             Text(
